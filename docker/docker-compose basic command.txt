@@ -1,0 +1,23 @@
+1. Go to folder wher you put docker-compose.yml
+2. Type one of the following command
+
+docker-compose up --d
+>> to run docker compose script, create containers
+
+docker-compose ps
+>> to see running containers
+
+docker-compose stop
+>> to stop all containers in docker compose
+
+docker-compose down
+>> to remove all containers in docker compose
+
+docker exec -it kafka bash
+kafka-topics.sh --bootstrap-server localhost:9092 --create --topic t_hello --partitions 1 --replication-factor 1   =====> to create a topic with name "t_hello" with the given partitons & replication-factors
+kafka-topics.sh --bootstrap-server localhost:9092 --list   =====> to list the topics that are associated with port 9092
+kafka-topics.sh --bootstrap-server localhost:9092 --delete --topic t_hello =====> to delete a topic with the name t_hello
+kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic t_hello --offset earliest --partition 3   =====> to open the consumer console for the given partition4
+kafka-topics.sh --bootstrap-server localhost:9092 --alter --topic t_hello --partitions 2  =====> to alter the partitions to 2 for the topic name t_hello
+kafka-topics.sh --bootstrap-server localhost:9092 --describe --topic t_hello   =====> describe about the partion with name t_hello
+
